@@ -29,7 +29,14 @@
                 @foreach ($todos as $todo)
                     <tr>
                         <td>{{ $todo->title }}</td>
-                        <td><a href="{{ route('todos.edit', [$todo->id]) }}">Modificar</a></td>
+                        <td class="d-flex justify-content-lg-around">
+                            <a href="{{ route('todos.edit', [$todo->id]) }}" class="btn btn-primary"> Modificar</a>
+                            <form action="{{ route('todos.destroy', [$todo->id]) }}" method="POST">
+                                @method('DELETE')
+                                @csrf
+                                <button type="submit" class="btn btn-danger"> Eliminar</button>
+                            </form>
+                        </td>
                     </tr>
                 @endforeach
             </tbody>
