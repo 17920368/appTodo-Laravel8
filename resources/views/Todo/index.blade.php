@@ -21,8 +21,8 @@
         <table class="table w-50">
             <thead>
                 <tr>
-                    <th scope="col">Title</th>
-                    <th scope="col">Action</th>
+                    <th scope="col">Titulo</th>
+                    <th scope="col">Accion</th>
                 </tr>
             </thead>
             <tbody>
