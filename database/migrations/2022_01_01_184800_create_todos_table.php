@@ -14,9 +14,17 @@ class CreateTodosTable extends Migration
     public function up()
     {
         Schema::create('todos', function (Blueprint $table) {
+            // $table->engine = 'InnoDB';
             $table->id();
             $table->string('title');
+            // $table->bigInteger('category_id')->unsigned();
             $table->timestamps();
+            // $table
+            //     ->foreign('category_id')
+            //     ->references('id')
+            //     ->on('categorias')
+            //     ->onUpdate('cascade')
+            //     ->onDelete('cascade');
         });
     }
 

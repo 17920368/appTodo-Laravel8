@@ -1,6 +1,6 @@
 <?php
 
-use App\Http\Controllers\TodosController;
+use App\Http\Controllers\CategoriaController;
 use App\Http\Controllers\TodosController2;
 use Illuminate\Support\Facades\Route;
 
@@ -23,5 +23,5 @@ Route::get('/', function () {
 //     return view('Todo.index');
 // })->name('todo');
 
-// Route::post('/todos', [TodosController::class, 'store'])->name('todos');
 Route::resource('todos', TodosController2::class);
+Route::resource('categoria', CategoriaController::class);

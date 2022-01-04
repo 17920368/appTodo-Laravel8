@@ -2,9 +2,10 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Categoria;
 use Illuminate\Http\Request;
 
-class Category extends Controller
+class CategoriaController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -13,7 +14,8 @@ class Category extends Controller
      */
     public function index()
     {
-        //
+        $categoria = Categoria::all();
+        return view('Categoria.index', ['categoria', $categoria]);
     }
 
     /**
@@ -34,7 +36,10 @@ class Category extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $categoria = new Categoria();
+        $categoria->name = $request->name;
+        $categoria->color = $request->color;
+        $categoria->save();
     }
 
     /**
@@ -68,7 +73,10 @@ class Category extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $categoria = Categoria::find($id);
+        $categoria->name = $request->name;
+        $categoria->color = $request->color;
+        $categoria->save();
     }
 
     /**
@@ -79,6 +87,7 @@ class Category extends Controller
      */
     public function destroy($id)
     {
-        //
+        $categoria = Categoria::find($id);
+        $categoria->delete();
     }
 }
